@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .calculator{
+            width: 400px;
+            height: 140px;
+            border: 1px solid black;
+            padding: 20px 0 0 100px;
+            box-shadow: 2px 2px 2px 2px #f2f2f2;
+            border-radius: 22px;
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Loan Calculator</h1>
+        <button onclick="calculate()">Start</button>
+    </div>
+
+    <script> 
+        function calculate(){
+            let amount = prompt("Nhập vào số lượng");
+            let rate = prompt("Nhập vào tỷ lệ (%)");
+            let months = prompt("Nhập vào số tháng");
+
+            const rateMonth = (amount * (rate*0.01)) / months;
+            const total = ((amount / months) + rateMonth).toFixed(2);
+        
+            alert("EMI: " + total);
+        }
+    </script>
+</body>
+</html>
